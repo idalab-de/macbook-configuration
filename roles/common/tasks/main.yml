@@ -15,12 +15,12 @@
     - dash
     - alfred
     - flux
-    - cleanmymac
+    #- cleanmymac
     - caffeine
-    - airfoil
-    - smcfancontrol
+    #- airfoil
+    #- smcfancontrol
     - gpgtools
-    - keybase
+    #- keybase
     - java
   when: ansible_os_family == 'Darwin'
   tags: common
@@ -29,15 +29,16 @@
   homebrew_cask: name={{ item }} state=present
   with_items:
     - iterm2
-    - libreoffice
-    - balsamiq-mockups
-    - airfoil
-    - dropbox
-    - google-drive
-    - send-to-kindle
+    #- libreoffice
+    #- balsamiq-mockups
+    #- airfoil
+    #- dropbox
+    #- google-drive
+    #- send-to-kindle
     - skype
-    - transmit
-    - keepassx
+    #- transmit
+    #- keepassx
     - fluid
+    - cyberduck
   when: ansible_os_family == 'Darwin'
   tags: common

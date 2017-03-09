@@ -7,11 +7,15 @@
     - git
     - zsh
     - vim
-    - golang
+    #- golang
     - docker
-    - python
-    - postgresql
-    - haskell
+    #- python
+    - role: pyenv 
+      pyenv_versions:
+        - '3.6.0'
+        - '2.7.13'
+    #- postgresql
+    #- haskell
     - node
     - dev
     - common

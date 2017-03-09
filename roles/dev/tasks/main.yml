@@ -24,26 +24,17 @@
   when: ansible_os_family == 'Darwin'
   tags: dev
 
-- name: install backing services (Mac)
-  homebrew: name={{ item }} state=present
-  with_items:
-    - redis
-    - memcached
-    - mysql
-      #- elasticsearch
-  when: ansible_os_family == 'Darwin'
-  tags: dev
-
 - name: Add development desktop tools
   homebrew_cask: name={{ item }} state=present
   with_items:
-    - pycharm
-    - sequel-pro
-    - phpstorm
-    - webstorm
-    - postico
+    #- pycharm
+    #- sequel-pro
+    #- phpstorm
+    #- webstorm
+    #- postico
     - atom
     - ngrok
+    - sublime-text
   when: ansible_os_family == 'Darwin'
   tags: dev
 
@@ -51,16 +42,9 @@
   homebrew_cask: name={{ item }} state=present
   with_items:
     - virtualbox
-    - vmware-fusion
+    # - vmware-fusion
     - vagrant
     - docker
-  when: ansible_os_family == 'Darwin'
-  tags: dev
-
-- name: Add ideavimrc
-  copy:
-    src: ideavimrc
-    dest: ~/.ideavimrc
   when: ansible_os_family == 'Darwin'
   tags: dev
 

@@ -1,0 +1,11 @@
+---
+pyenv_root: ~/.pyenv
+pyenv_project_root: '~'
+
+pyenv_runcom: ~/.bashrc
+
+pyenv_versions: []
+pyenv_default_versions: []
+pyenv_project_versions: []
+
+pyenv_virtualenv: true

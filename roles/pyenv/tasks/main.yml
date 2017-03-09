@@ -1,0 +1,47 @@
+---
+- include: pyenv.yml
+
+- name: Install versions
+  command: creates={{ pyenv_root }}/versions/{{ item }} pyenv install {{ item }}
+  with_items: pyenv_versions
+
+- include: versions.yml
+  versions: "{{ pyenv_default_versions }}"
+  dest: "{{ pyenv_root }}/version"
+
+- include: versions.yml
+  versions: "{{ pyenv_project_versions }}"
+  dest: "{{ pyenv_project_root }}/.python-version"
+
+- name: Add to run commands
+  lineinfile: >
+    dest={{ pyenv_runcom }}
+    state=present
+    create=yes
+    line="{{ item }}"
+  with_items:
+    - if which pyenv > /dev/null; then
+    - "    export PYENV_ROOT=\\\"$HOME/.pyenv\\\""
+    - "    export PATH=\\\"$PYENV_ROOT/bin:$PATH\\\""
+    - "    eval \\\"$(pyenv init -)\\\""
+    - "fi # pyenv"
+
+- name: Add virtualenv to run commands
+  lineinfile: >
+    dest={{ pyenv_runcom }}
+    state=present
+    create=yes
+    insertbefore="fi # pyenv"
+    line="    pyenv virtualenvwrapper_lazy"
+  when: pyenv_virtualenv
+
+- name: Configure virtualenvwrapper
+  lineinfile: >
+    dest={{ pyenv_runcom }}
+    state=present
+    create=yes
+    line="{{ item }}"
+  with_items:
+    - export WORKON_HOME=\"$HOME/.virtualenvs\"
+    - export PROJECT_HOME=\"$HOME/development\"
+  when: pyenv_virtualenv and pyenv_runcom
