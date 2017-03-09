@@ -2,8 +2,8 @@
 - include: pyenv.yml
 
 - name: Install versions
-  command: creates={{ pyenv_root }}/versions/{{ item }} pyenv install {{ item }}
-  with_items: pyenv_versions
+  command: pyenv install {{ item }} creates={{ pyenv_root }}/versions/{{ item }}
+  with_items: "{{ pyenv_versions }}"
 
 - include: versions.yml
   versions: "{{ pyenv_default_versions }}"
