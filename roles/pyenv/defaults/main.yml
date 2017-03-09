@@ -1,5 +1,5 @@
 ---
-pyenv_root: ~/.pyenv
+pyenv_root: /usr/local/opt/pyenv
 pyenv_project_root: '~'
 
 pyenv_runcom: ~/.bashrc

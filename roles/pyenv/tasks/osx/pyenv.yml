@@ -6,5 +6,4 @@
   homebrew: name={{ item }} state=present
   with_items:
     - pyenv-virtualenv
-    - pyenv-virtualenvwrapper
   when: pyenv_virtualenv
