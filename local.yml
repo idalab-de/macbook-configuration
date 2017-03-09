@@ -11,9 +11,7 @@
     - docker
     #- python
     - role: pyenv 
-      pyenv_versions:
-        - '3.6.0'
-        - '2.7.13'
+      pyenv_versions: [3.6.0, 2.7.13]
     #- postgresql
     #- haskell
     - node
