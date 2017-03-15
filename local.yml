@@ -10,9 +10,9 @@
     #- golang
     - docker
     #- python
-    - role: pyenv 
+    - role: pyenv
       pyenv_versions: [3.6.0, 2.7.13]
-    #- postgresql
+    - postgresql
     #- haskell
     - node
     - dev
