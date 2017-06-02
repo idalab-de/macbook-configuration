@@ -14,6 +14,12 @@ $script = <<-SCRIPT
    if [[ ! -x /usr/local/bin/brew ]]; then
    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" </dev/null
    fi
+
+   if [[ ! -x /usr/local/bin/ansible ]]; then
+    echo "Info   | Install   | Ansible"
+    brew update
+    brew install ansible
+   fi
    SCRIPT
 
 Vagrant.configure("2") do |config|
@@ -26,15 +32,4 @@ Vagrant.configure("2") do |config|
   config.vm.provision "shell", inline: $script, privileged: false
 end
 end
-
-
-   #touch /tmp/.com.apple.dt.CommandLineTools.installondemand.in-progress;
-   #PROD=$(softwareupdate -l |
-    # grep "\*.*Command Line" |
-     #head -n 1 | awk -F"*" '{print $2}' |
-     #sed -e 's/^ *//' |
-     #tr -d '\n')
-   #softwareupdate -i "$PROD" --verbose;
-    
-   #ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" </dev/null
 
