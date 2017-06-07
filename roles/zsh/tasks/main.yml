@@ -16,10 +16,12 @@
 - name: change to zsh (Mac)
   shell: chsh -s /usr/local/bin/zsh {{ ansible_env.USER }}
   when: ansible_os_family == 'Darwin'
+  become: true
 
 - name: change to zsh (Ubuntu)
   shell: chsh -s /usr/bin/zsh {{ ansible_env.USER }}
   when: ansible_os_family == 'Ubuntu'
+  become: true
 
 - name: install oh-my-zsh
   git: repo=https://github.com/robbyrussell/oh-my-zsh.git

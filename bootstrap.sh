@@ -32,9 +32,3 @@ if [[ ! -x /usr/local/bin/ansible ]]; then
     brew update
     brew install ansible
 fi
-
-# Modify the PATH
-# This should be subsequently updated in shell settings
-export PATH=/usr/local/bin:$PATH
-
-ansible-playbook local.yml -K
