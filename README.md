@@ -1,7 +1,6 @@
 # Personal computer configuration.
 
-This is my personal MacBook configuration. There are many like it, but
-this one is mine.
+This is the idalab MacBook configuration.
 
 For that reason it's largely set up for my particular needs. If you want
 to use it yourself I'd recommend reading through it first. Remove as
