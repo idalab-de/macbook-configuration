@@ -2,11 +2,6 @@
 
 This is the idalab MacBook configuration.
 
-For that reason it's largely set up for my particular needs. If you want
-to use it yourself I'd recommend reading through it first. Remove as
-much as possible and build up, making changes as you go, so it fits your
-needs.
-
 ### Set up
 
 Run the bootstrap script. This will ensure gcc,
