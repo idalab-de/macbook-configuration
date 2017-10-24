@@ -9,7 +9,7 @@ Run the bootstrap script. This will ensure gcc,
 installed:
 
     $ ./bootstrap.sh
-    $ ansible-playbook local.yml -K
+    $ ansible-playbook local.yml -K -i hosts
 
 The `-K` flag means that Ansible will prompt you for your sudo password
 before it executes the playbook.
