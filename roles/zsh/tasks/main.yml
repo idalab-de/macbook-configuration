@@ -42,11 +42,3 @@
 - name: add zprofile file
   copy: src=zprofile dest=~/.zprofile
   tags: zsh
-
-# This might go somewhere else...
-- name: pipenv config
-  lineinfile:
-    path: ~/.profile
-    line: 'export PIPENV_VENV_IN_PROJECT=1'
-    create: yes
-  tags: pipenv

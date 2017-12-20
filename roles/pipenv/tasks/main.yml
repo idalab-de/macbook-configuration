@@ -1,0 +1,39 @@
+- name: Ensure locale
+  lineinfile:
+    path: ~/.profile
+    line: "{{ item }}"
+    create: yes
+  with_items:
+    - "export LC_ALL=de_DE.utf-8"
+    - "export LANG=de_DE.utf-8"
+  tags: pipenv
+
+- name: install pipsi
+  shell: curl https://raw.githubusercontent.com/mitsuhiko/pipsi/master/get-pipsi.py | python3 - --src 'git+https://github.com/mitsuhiko/pipsi.git#egg=pipsi'
+  args:
+    creates: ~/.local/bin/pipsi
+
+- lineinfile:
+    path: ~/.profile
+    regexp: '^PATH="$HOME/.local/bin"'
+    line: 'PATH="$HOME/.local/bin:$PATH"'
+  tags: pipenv
+
+
+- command: ~/.local/bin/pipsi install pew
+  args:
+    creates: ~/.local/bin/pew
+  tags: pipenv
+
+
+- command: ~/.local/bin/pipsi install pipenv
+  args:
+    creates: ~/.local/bin/pipenv
+  tags: pipenv
+
+- name: pipenv config
+  lineinfile:
+    path: ~/.profile
+    line: 'export PIPENV_VENV_IN_PROJECT=1'
+    create: yes
+  tags: pipenv
