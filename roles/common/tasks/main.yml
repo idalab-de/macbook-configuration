@@ -19,7 +19,7 @@
     - caffeine
     #- airfoil
     #- smcfancontrol
-    - gpgtools
+    #- gpgtools
     #- keybase
     - java
   when: ansible_os_family == 'Darwin'
