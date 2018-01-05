@@ -41,7 +41,7 @@
 - name: Virtualization for dev
   homebrew_cask: name={{ item }} state=present
   with_items:
-    - virtualbox
+    #  - virtualbox
     # - vmware-fusion
     - vagrant
     - docker
