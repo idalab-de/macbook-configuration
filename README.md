@@ -4,10 +4,15 @@ This is the idalab MacBook configuration.
 
 ### Set up
 
+Clone the repository to your computer, copy and pasting its link (above):
+
+    $ git clone COPY_PASTED_LINK
+
 Run the bootstrap script. This will ensure gcc,
 [Homebrew](http://brew.sh/), and [Ansible](http://docs.ansible.com/) are
 installed:
 
+    $ cd macbook-configuration/
     $ ./bootstrap.sh
     $ ansible-playbook local.yml -K -i hosts
 
