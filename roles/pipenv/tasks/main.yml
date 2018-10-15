@@ -8,27 +8,17 @@
     - "export LANG=de_DE.utf-8"
   tags: pipenv
 
-- name: install pipsi
-  shell: curl https://raw.githubusercontent.com/mitsuhiko/pipsi/master/get-pipsi.py | python3 - --src 'git+https://github.com/mitsuhiko/pipsi.git#egg=pipsi'
-  args:
-    creates: ~/.local/bin/pipsi
-
 - lineinfile:
     path: ~/.profile
     regexp: '^PATH="$HOME/.local/bin"'
     line: 'PATH="$HOME/.local/bin:$PATH"'
   tags: pipenv
 
-
-- command: ~/.local/bin/pipsi install pew
-  args:
-    creates: ~/.local/bin/pew
-  tags: pipenv
-
-
-- command: ~/.local/bin/pipsi install pipenv
-  args:
-    creates: ~/.local/bin/pipenv
+- name: install pipenv
+  homebrew: name={{ item }} state=latest
+  with_items:
+    - pipenv
+  when: ansible_os_family == 'Darwin'
   tags: pipenv
 
 - name: pipenv config

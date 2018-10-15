@@ -32,6 +32,8 @@
     #- phpstorm
     #- webstorm
     #- postico
+    - slack
+    - iterm2
     - atom
     - ngrok
     - sublime-text

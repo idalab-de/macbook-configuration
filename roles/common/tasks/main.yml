@@ -35,10 +35,10 @@
     #- dropbox
     #- google-drive
     #- send-to-kindle
-    - skype
+    #- skype
     #- transmit
     #- keepassx
-    - fluid
-    - cyberduck
+    #- fluid
+    #- cyberduck
   when: ansible_os_family == 'Darwin'
   tags: common
