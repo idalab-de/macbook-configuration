@@ -1,8 +1,7 @@
 ---
 - name: install vim (Mac)
-  homebrew: name={{ item }} state=present
-  with_items:
-    - vim
+  homebrew:
+    name: [vim]
   when: ansible_os_family == 'Darwin'
   tags: vim
 
@@ -14,15 +13,11 @@
   tags: vim
 
 - name: install neovim (Mac)
-  homebrew: name={{ item }} state=present
+  homebrew:
+    name: [neovim]
   with_items:
     - neovim
   when: ansible_os_family == 'Darwin'
-  tags: vim
-
-- name: install vim (Ubuntu)
-  apt: pkg=vim state=present
-  when: ansible_os_family == 'Ubuntu'
   tags: vim
 
 - name: add vim autoload dir

@@ -7,9 +7,6 @@
     - git
     - zsh
     - vim
-    #- golang
-    - docker
-    #- python
     - role: pyenv
       pyenv_root: "~/.pyenv"
       pyenv_runcom: "~/.profile"
@@ -17,8 +14,6 @@
       pyenv_default_versions: "3.6.5:2.7.14"
     - pipenv
     - postgresql
-    #- haskell
     - node
     - dev
     - common
-    #- ruby

@@ -15,9 +15,8 @@
   tags: pipenv
 
 - name: install pipenv
-  homebrew: name={{ item }} state=latest
-  with_items:
-    - pipenv
+  homebrew:
+    name: [pipenv]
   when: ansible_os_family == 'Darwin'
   tags: pipenv
 

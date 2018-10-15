@@ -1,13 +1,7 @@
 ---
 - name: install development libraries (Mac)
-  homebrew: name={{ item }} state=present
-  with_items:
-    - libevent
-    - libmemcached
-    - libxml2
-    - libffi
-    - gdal
-    - gmp
+  homebrew:
+    name: ['libevent', 'libmemcached', 'libxml2', 'libffi', 'gdal', 'gmp']
   when: ansible_os_family == 'Darwin'
   tags: dev
 
@@ -18,43 +12,19 @@
   #when: ansible_os_family == 'Darwin'
 
 - name: install dev CLI tools
-  homebrew: name={{ item }} state=present
-  with_items:
-    - heroku
+  homebrew:
+    name: [heroku]
   when: ansible_os_family == 'Darwin'
   tags: dev
 
 - name: Add development desktop tools
-  homebrew_cask: name={{ item }} state=present
-  with_items:
-    #- pycharm
-    #- sequel-pro
-    #- phpstorm
-    #- webstorm
-    #- postico
-    - slack
-    - iterm2
-    - atom
-    - ngrok
-    - sublime-text
+  homebrew_cask:
+    name: [sequel-pro, slack, iterm2, atom, ngrok, sublime-text]
   when: ansible_os_family == 'Darwin'
   tags: dev
 
 - name: Virtualization for dev
-  homebrew_cask: name={{ item }} state=present
-  with_items:
-    #  - virtualbox
-    # - vmware-fusion
-    - vagrant
-    - docker
+  homebrew_cask:
+    name: [vagrant, virtualbox, docker, docker-compose]
   when: ansible_os_family == 'Darwin'
   tags: dev
-
-# These are libraries that are installed but the Homebrew *module* fails on;
-# not Homebrew by itself. At the end b/c they will fail but that's okay.
-# They're here to track config until the problem can be identified and solved.
-#- name: install problem libraries (Mac)
-#  homebrew: name={{ item }} state=present
-#  with_items:
-#    - libgeoip
-#  when: ansible_os_family == 'Darwin'
