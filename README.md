@@ -1,6 +1,10 @@
 # Personal computer configuration.
 
-This is the idalab MacBook configuration.
+This is the idalab MacBook configuration. We use this process to set up our work machines for development, now you can use it too.
+
+### Acknowledgements
+
+None of this would exist without Noa Malem and Daniel Kirsch (https://github.com/kirel)
 
 ### Set up
 
@@ -19,11 +23,14 @@ installed:
 The `-K` flag means that Ansible will prompt you for your sudo password
 before it executes the playbook.
 
-If it's your first time, go brew some coffee or tea because this will take a while
+If it's your first time, go brew some coffee or tea because this will take a while.
 
-### Using Vagrant to configure and run a virtual machine:
 
-First, Download: 
+### Testing and development - Using Vagrant to configure and run a virtual machine:
+
+You only need to read this if you want to test and/or develop this process in a virtual machine.
+
+First, Download:
 	vagrant - [https://www.vagrantup.com/downloads.html](Link URL)
 	virtualbox - [https://www.virtualbox.org/wiki/Downloads](Link URL)
 	download the extension package for virtualbox in the above link as well.
@@ -61,6 +68,3 @@ On your machine in the Finder press CMD+K and type in:
 vnc://192.168.33.10
 User: vagrant
 Password: vagrant
-
-
-enjoy!!
