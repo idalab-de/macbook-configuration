@@ -26,6 +26,14 @@ before it executes the playbook.
 If it's your first time, go brew some coffee or tea because this will take a while.
 
 
+### How it works
+
+The starting point is the file 'local.yml' in the root of this repository. There you can find which roles will be included in the run, as well as some parameters for the execution of the pyenv role. The folder roles contains one folder for each role that is listed in local.yml, which in turn contains a folder 'tasks' where you will find a file called 'main.yml'. This file contains the specific install instructions for the role.
+To clarify using a short example: The role 'common' in local.yml is meant to refer to usual desktop apps that are needed to our jobs. So if you look inside the folder roles -> common -> tasks you will find the main.yml that specifies exactly which programs will be installed if the role common is included in the local.yml at the root of the repository.
+
+After you start ansible-playbook it will install all roles defined in local.yml according to each roles specific main.yml file.
+
+
 ### Testing and development - Using Vagrant to configure and run a virtual machine:
 
 You only need to read this if you want to test and/or develop this process in a virtual machine.
