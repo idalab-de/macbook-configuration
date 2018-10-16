@@ -4,7 +4,7 @@ This is the idalab MacBook configuration. We use this process to set up our work
 
 ### Acknowledgements
 
-None of this would exist without Noa Malem and Daniel Kirsch (https://github.com/kirel)
+None of this would exist without Noa Shinitski (https://github.com/noashin) and Daniel Kirsch (https://github.com/kirel)
 
 ### Set up
 
