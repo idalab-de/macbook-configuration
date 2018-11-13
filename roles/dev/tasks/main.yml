@@ -19,7 +19,7 @@
 
 - name: Add development desktop tools
   homebrew_cask:
-    name: [sequel-pro, slack, iterm2, atom, ngrok, sublime-text]
+    name: [sequel-pro, slack, atom, ngrok, sublime-text]
   when: ansible_os_family == 'Darwin'
   tags: dev
 
