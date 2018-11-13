@@ -13,6 +13,6 @@
 
 - name: Add general desktop tools
   homebrew_cask:
-    name: [bitwarden, iterm2]
+    name: [bitwarden]
   when: ansible_os_family == 'Darwin'
   tags: common
