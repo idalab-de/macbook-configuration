@@ -11,20 +11,14 @@
   #  - libxml2
   #when: ansible_os_family == 'Darwin'
 
-- name: install dev CLI tools
-  homebrew:
-    name: [heroku]
-  when: ansible_os_family == 'Darwin'
-  tags: dev
-
 - name: Add development desktop tools
   homebrew_cask:
-    name: [sequel-pro, slack, iterm2, atom, ngrok, sublime-text]
+    name: [sequel-pro, slack, iterm2, atom]
   when: ansible_os_family == 'Darwin'
   tags: dev
 
 - name: Virtualization for dev
   homebrew_cask:
-    name: [vagrant, virtualbox, docker, docker-compose]
+    name: [docker, docker-compose]
   when: ansible_os_family == 'Darwin'
   tags: dev

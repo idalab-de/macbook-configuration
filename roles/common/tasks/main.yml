@@ -7,12 +7,12 @@
 
 - name: Add desktop utility tools
   homebrew_cask:
-    name: [dash, alfred, flux, caffeine, spectacle, java]
+    name: [dash, alfred, flux, caffeine, spectacle]
   when: ansible_os_family == 'Darwin'
   tags: common
 
 - name: Add general desktop tools
   homebrew_cask:
-    name: [bitwarden, iterm2]
+    name: [iterm2]
   when: ansible_os_family == 'Darwin'
   tags: common
