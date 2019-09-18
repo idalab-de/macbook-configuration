@@ -5,20 +5,38 @@
   when: ansible_os_family == 'Darwin'
   tags: dev
 
-  #- name: unlink keg only
-  #command: brew unlink {{ item}}
-  #with_items:
-  #  - libxml2
-  #when: ansible_os_family == 'Darwin'
+- name: Install Anaconda
+  homebrew_cask:
+    name: [anaconda]
+  when: ansible_os_family == 'Darwin'
+  tags: dev
+
+- name: install git stuff
+  homebrew:
+    name: [git, git-extras, tig]
+  when: ansible_os_family == 'Darwin'
+  tags: dev
 
 - name: Add development desktop tools
   homebrew_cask:
-    name: [sequel-pro, slack, iterm2, atom]
+    name: [sequel-pro, iterm2, atom]
   when: ansible_os_family == 'Darwin'
   tags: dev
 
 - name: Virtualization for dev
   homebrew_cask:
-    name: [docker, docker-compose]
+    name: [docker]
+  when: ansible_os_family == 'Darwin'
+  tags: dev
+
+- name: Cloud cli
+  homebrew_cask:
+    name: [google-cloud-sdk]
+  when: ansible_os_family == 'Darwin'
+  tags: dev
+
+- name: DB tools
+  homebrew_cask:
+    name: [pgadmin4]
   when: ansible_os_family == 'Darwin'
   tags: dev

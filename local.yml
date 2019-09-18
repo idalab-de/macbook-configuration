@@ -3,12 +3,7 @@
   roles:
     - homebrew
     - utils
-    - tmux
-    - git
     - zsh
     - vim
-    - pipenv
-    - postgresql
-    - node
     - dev
     - common

@@ -1,6 +1,6 @@
 ---
 - name: install CLI tools
   homebrew:
-    name: ['tree', 'readline', 'wget', 'ack', 'ctags', 'sloccount', 'autoenv', 'ripgrep', 'jq', 'hledger']
+    name: [tmux, tree, readline, wget, ack, ctags, sloccount, autoenv, ripgrep, jq, hledger]
   when: ansible_os_family == 'Darwin'
   tags: utils

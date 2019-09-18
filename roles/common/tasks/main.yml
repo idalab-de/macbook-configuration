@@ -13,6 +13,6 @@
 
 - name: Add general desktop tools
   homebrew_cask:
-    name: [iterm2]
+    name: [slack, microsoft-office, dashlane, zoomus]
   when: ansible_os_family == 'Darwin'
   tags: common
