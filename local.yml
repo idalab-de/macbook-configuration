@@ -3,17 +3,7 @@
   roles:
     - homebrew
     - utils
-    - tmux
-    - git
     - zsh
     - vim
-    - role: pyenv
-      pyenv_root: "~/.pyenv"
-      pyenv_runcom: "~/.profile"
-      pyenv_versions: [3.6.5, 2.7.14]
-      pyenv_default_versions: "3.6.5:2.7.14"
-    - pipenv
-    - postgresql
-    - node
     - dev
     - common

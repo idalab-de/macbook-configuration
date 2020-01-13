@@ -1,6 +1,0 @@
----
-- name: Install Node (Mac)
-  homebrew:
-    name: [node, yarn]
-  when: ansible_os_family == 'Darwin'
-  tags: node

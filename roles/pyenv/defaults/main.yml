@@ -1,8 +1,0 @@
----
-pyenv_root: /usr/local/opt/pyenv
-
-pyenv_runcom: ~/.bashrc
-
-pyenv_versions: []
-pyenv_default_versions: []
-pyenv_project_versions: []
